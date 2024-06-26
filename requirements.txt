@@ -1,6 +1,5 @@
-flask
-requests
-langchain
-openai
-python-dotenv
-PyPDF2
+flask=3.0.3
+requests=2.32.3
+openai=1.35.3
+python-dotenv=1.0.1
+PyPDF2=3.0.1
