@@ -1,5 +1,6 @@
 import openai
 import json
+import os
 from openai import OpenAI
 from flask import jsonify
 from constants import ERROR_MESSAGES, PDF_TEMP_STORAGE_PATH, PROMPT_QUESTION
@@ -13,9 +14,11 @@ class OpenAiService(object):
         self.openai_client = OpenAI(api_key=openai_api_key)
 
 
-    def get_response(self):
+    def get_response(self, file):
         extracted_text = ''
         try:
+             # Save the file in temporary storage
+            file.save(PDF_TEMP_STORAGE_PATH)
              # Extract text from the PDF
             extracted_text = CertificationUtil.extract_text_from_pdf(PDF_TEMP_STORAGE_PATH)
 
@@ -38,4 +41,10 @@ class OpenAiService(object):
             return jsonify({'error': str(e)}), 500
         except Exception as e:
             return jsonify({'error': str(e)}), 500
+        finally:
+            if os.path.exists(PDF_TEMP_STORAGE_PATH):
+                os.remove(PDF_TEMP_STORAGE_PATH)
+            else:
+                print(f"File {PDF_TEMP_STORAGE_PATH} does not exist.")
+        
         return response_data

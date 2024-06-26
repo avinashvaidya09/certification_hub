@@ -18,13 +18,10 @@ def generateQuestions():
     if file.filename == '':
         return jsonify({'error': ERROR_MESSAGES['no_file_selected']}), 400
     
-    
     try:
-        # Save the file in temporary storage
-        file.save(PDF_TEMP_STORAGE_PATH)
-
+       
         # Call OpenAIService
-        open_ai_response = OpenAiService().get_response();
+        open_ai_response = OpenAiService().get_response(file);
 
         # Convert the response in JSON format
         response_dto = jsonify(open_ai_response)
@@ -35,5 +32,5 @@ def generateQuestions():
             return jsonify({'error': str(e)}), 500
     finally:
         file.close
-
+        
     return response_dto

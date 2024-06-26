@@ -2,3 +2,4 @@
 **/src/__pycache__/
 **/resources/.env.local
 **/resources/.env.development
+**/data/file.pdf

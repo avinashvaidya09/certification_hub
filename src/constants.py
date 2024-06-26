@@ -5,7 +5,7 @@ PROMPT_QUESTION='Generate certification questions with options and answers from 
 DOTENV_COMMON_PATH = './resources/.env'
 DOTENV_LOCAL_PATH = './resources/.env.local'
 DOTENV_DEV_PATH = './resources/.env.development'
-PDF_TEMP_STORAGE_PATH = './resources/file.pdf'
+PDF_TEMP_STORAGE_PATH = './data/file.pdf'
 
 # Environments
 LOCAL='local'

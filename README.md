@@ -1,4 +1,3 @@
-
 ### Set up steps - 
 1. Create Dev Work Space
 2. Import/Clone project from GIT - https://github.tools.sap/genai-certification-2024/certification_hub.git
@@ -11,10 +10,13 @@
 4. Every time you open workspace you might have to activate the virtual environment with the help of command - **source /home/user/projects/certification_hub/.venv/bin/activate**
 
 ### Debugging - 
-1. To debug on local, run the command - python3 ./src/server.py
+1. To run python app on local - python3 ./src/server.py
+2. To debug on local - Open server.py and start in debug mode. 
+    1. Add breakpoint in the controller.
+    2. For local testing, a sample certification_material.pdf is added in ./data folder.
+    2. Refer to the CURL command in the requests.http.
+    3. Open another terminal and run the curl command.
 2. To check the BTP logs, use command - **cf logs certification_hub --recent**
-
-
 
 ### Important files - 
 1. **manifest.yml** - This is required for BTP deployment. Minimum specifications to run the app on cloud foundary.
