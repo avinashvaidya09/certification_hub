@@ -1,3 +1,10 @@
+## Introduction
+This file provides
+1. Set up steps
+2. Debbuging steps
+3. Important files
+4. GIT commands
+
 ### Set up steps - 
 1. Create Dev Work Space
 2. Import/Clone project from GIT - https://github.tools.sap/genai-certification-2024/certification_hub.git
