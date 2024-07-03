@@ -11,6 +11,8 @@ cf_port = os.getenv("PORT")
 
 app.register_blueprint(certification_controller_bp, url_prefix='/certification')
 
+app.register_blueprint(generate_questions_bp, url_prefix='/generateQuestions')
+
 # Only get method by default
 @app.route('/')
 def hello():
