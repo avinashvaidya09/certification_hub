@@ -8,7 +8,7 @@ generate_questions_bp = Blueprint('generate_questions', __name__)
 
 
 # Method to generate questions from the pdf
-@certification_controller_bp.route('/generateQuestions', methods=['POST'])
+@generate_questions_bp.route('/generateQuestions', methods=['POST'])
 def generateQuestions():
     chapterString = ""
     try:

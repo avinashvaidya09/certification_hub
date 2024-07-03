@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 from certification_controller import certification_controller_bp
+from generate_questions import generate_questions_bp
 
 
 app = Flask(__name__)
